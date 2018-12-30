@@ -1,0 +1,37 @@
+html, body {
+  /*padding: 5px;*/
+  width: 200px;
+
+  /* custom */
+  /*overflow-x: visible;*/
+  /*overflow-y: visible;*/
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  /*margin: 3% auto;*/
+  margin: 3%;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.beast:hover {
+  background-color: #CFF2F2;
+}
+
+.beast {
+  background-color: #E5F2F2;
+}
+
+.reset {
+  background-color: #FBFBC9;
+}
+
+.reset:hover {
+  background-color: #EAEA9D;
+}
