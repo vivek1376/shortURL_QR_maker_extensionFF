@@ -1,10 +1,14 @@
 html, body {
   /*padding: 5px;*/
-  width: 200px;
+  /*width: 300px;*/
 
   /* custom */
   /*overflow-x: visible;*/
   /*overflow-y: visible;*/
+}
+
+div#wrap {
+  margin: 8px;
 }
 
 .hidden {
@@ -20,12 +24,12 @@ html, body {
   cursor: pointer;
 }
 
-.beast:hover {
-  background-color: #CFF2F2;
-}
-
-.beast {
-  background-color: #E5F2F2;
+div#urlinfo {
+  font-size: 30px;
+  font-family: 'customEX-webfont', monospace;
+  font-weight: bold;
+  color: #5e5d57;
+  height: 80px;
 }
 
 .reset {
@@ -34,4 +38,11 @@ html, body {
 
 .reset:hover {
   background-color: #EAEA9D;
+}
+
+img#qrimg {
+  width: 250px;
+  height: 250px;
+  /*border: 1px solid #23201f;*/
+  object-fit: contain;
 }

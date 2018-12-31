@@ -11,7 +11,7 @@
   },
   // to fix cors error
   "permissions": [
-    "activeTab", "*://is.gd/*", // "<all_urls>"
+    "activeTab", "*://is.gd/*", "*://chart.googleapis.com/*"
   ],
   "browser_action": {
     "default_icon": "icons/border-48.png",
