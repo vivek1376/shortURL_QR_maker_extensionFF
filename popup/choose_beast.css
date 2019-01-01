@@ -1,14 +1,12 @@
 html, body {
-  /*padding: 5px;*/
-  /*width: 300px;*/
-
-  /* custom */
-  /*overflow-x: visible;*/
-  /*overflow-y: visible;*/
+  width: 266px;
+  overflow: hidden;
 }
 
 div#wrap {
   margin: 8px;
+  /*width: 266px;*/
+  overflow: hidden;
 }
 
 .hidden {
@@ -24,12 +22,92 @@ div#wrap {
   cursor: pointer;
 }
 
+div#urlStrBtn {
+    width:100%;
+    height: 36px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    margin-bottom: 10px;
+}
+
 div#urlinfo {
-  font-size: 30px;
-  font-family: 'customEX-webfont', monospace;
+    padding-top: 4px;
+    font-size: 24px;
+    font-family: 'hackregular', monospace;
+    font-weight: bold;
+    color: #3c3c49;
+
+    /* to clip excess text, in order to prevent displacing 'copy' button,
+       also set width for body */
+    width: 80%;
+    /*height: 36px; !* 60px; *!*/
+    /*border: 1px solid black;*/
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+
+}
+
+div#footer {
+  height: 26px;
+  background-color: #fff9f2;
+  border-top: 1px dotted #f2ece6;
+  overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+  /*display: table;*/
+}
+
+div#footer p.status {
+  padding-top: 4px;
+  /*padding: 2px;*/
+  /*padding-left: 4px;*/
+  /*padding-bottom: 0;*/
+  /*display: table-cell;*/
+  /*display: inline-block;*/
+  font-size: 15px;
+  width: 75%;
+  /*height: 26px;*/
+  float: left;
+  /*border: 1px solid black;*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*vertical-align: middle;*/
+  font-family: 'hackitalic', monospace;
+  /*font-style: italic;*/
+  text-transform: uppercase;
+  color: #86817f;
   font-weight: bold;
-  color: #5e5d57;
-  height: 80px;
+    /*margin: auto;*/
+  /*background-color: #9ac4ff;*/
+}
+
+div#footer div.about {
+  float: right;
+  overflow: hidden;
+}
+
+div#footer div.about a {
+  /*height: ;*/
+  display: inline-block;
+  /*border: 1px solid black;*/
+  padding-top: 5px;
+  padding-left: 10px;
+  overflow: hidden;
+  /*padding-bottom: 4px;*/
+}
+
+div#footer div.about img {
+  height: 17px;
+
+}
+
+input#copybtn {
+  display: block;
+  float: right;
 }
 
 .reset {
@@ -45,4 +123,7 @@ img#qrimg {
   height: 250px;
   /*border: 1px solid #23201f;*/
   object-fit: contain;
+  /*background-image: url("E1E1E1-1.png");*/
+  /*background-repeat: repeat;*/
+  background-repeat: repeat;
 }
