@@ -2,6 +2,11 @@
  * There was an error executing the script.
  * Display the popup's error message, and hide the normal UI.
  */
+// document.querySelector('div#aboutBox').classList.add('hidden');
+
+
+custom_var = "custom_val";
+
 function reportExecuteScriptError(error) {
     printError();
     // document.querySelector("#popup-content").classList.add("hidden");
@@ -21,17 +26,18 @@ function printError(errStr) {
  * and add a click handler.
  * If we couldn't inject the script, handle the error.
  */
-browser.tabs.executeScript({file: "/content_scripts/beastify.js"})
+browser.tabs.executeScript({file: "/content_scripts/contentscript.js"})
     .catch(reportExecuteScriptError);
 
-// for communication
+/* for communication; to get url string from content-script */
 browser.runtime.onMessage.addListener(notify);
 
 function notify(message) {
 
-    var isgdUrl_str = "";
+    var isgdUrl_str = '';
 
     console.log("In message()");
+
     // document.getElementById("urlinfo").innerText = message.url;
 
     // var url = 'https://www.pbs.org/video/great-conversations-great-conversations-siddhartha-mukherjee';
@@ -70,10 +76,12 @@ function notify(message) {
 
                 document.getElementById("urlinfo").innerText = isgdUrl_str_formatted;
 
-                url_qr = 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chld=M|0&chl='
+                url_qr = 'https://chart.googleapis.com/chart?cht=qr&chs=250x250&chld=M|0&chl='
                     + encodeURIComponent(isgdUrl_str);
 
                 console.log(url_qr);
+
+                console.log("global var: " + window.myglobalvar);
 
                 var image = document.getElementById("qrimg");
                 var downloadingImage = new Image();
@@ -121,7 +129,7 @@ function notify(message) {
     var oldStStr = '';
 
 
-    var likeIcon_obj = document.querySelector('div#footer div.about a');
+    var likeIcon_obj = document.querySelector('div#footer div.about a#likelink');
 
     likeIcon_obj.addEventListener("mouseover", function () {
         console.log("mouseover");
@@ -167,6 +175,28 @@ function notify(message) {
         document.querySelector('div#footer p.status').innerText = 'copied !';
     });
 
+
+    var isAboutDisplay = false;
+
+    var divmain_obj = document.querySelector('div#wrap');
+    var divAbtBox_obj = document.querySelector('div#aboutBox');
+    var divlike_obj = document.querySelector('div#footer div.about');
+
+    likeIcon_obj.addEventListener("click", function () {
+        divAbtBox_obj.classList.remove('hidden');
+        divmain_obj.classList.add('hidden');
+
+        divlike_obj.classList.add('hidden');
+    });
+
+    document.querySelector('a#closeabt').addEventListener("click", function () {
+        divmain_obj.classList.remove('hidden');
+        divlike_obj.classList.remove('hidden');
+        divAbtBox_obj.classList.add('hidden');
+    });
+
+
+    /* send api request to is.gd */
     xhttp.open("GET", apiUrl, true);
     xhttp.setRequestHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     xhttp.overrideMimeType("application/json");
