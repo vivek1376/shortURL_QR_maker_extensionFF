@@ -8,7 +8,7 @@
 - In the popup UI:
   - View both short URL and QR code.
   - Click on **Copy** button to copy URL to clipboard.
-- Also, get short URL created and copied directly to clipboard through context-menu option.
+- Also, use *right click* -> *context-menu* option to generate and copy short URL to clipboard.
 <br>
 
 ## APIs used
