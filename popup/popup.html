@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Short URL & QR code maker</title>
+    <link rel="stylesheet" type="text/css" href="reset_alligator_io.css"/>
+    <link rel="stylesheet" href="fonts/hack_regular_macroman/stylesheet.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="fonts/hack_italic_macroman/stylesheet.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="popup.css"/>
+</head>
+
+<body>
+
+<div id="wrap">
+    <div id="urlStrBtn">
+        <div id="urlinfo" class="info"></div>
+        <input id="copybtn" type="image" src="copy.png" height="36">
+    </div>
+    <img id="qrimg" src="bgPixel.png"/>
+</div>
+
+<div id="aboutBox" class="hidden">
+    <img id="logo" src="../icons/icon96.png" height="60">
+    <p>View source code <a href = "https://github.com/vivek1376/shortURL_QR_maker_extensionFF" target="_blank">here</a>. Report bugs through <a href = "mailto:vivek.1376@gmail.com">email</a>.</p>
+    <p>If you love this add-on, consider donating to support the developer through <a href="https://paypal.me/VivekMehra1" target="_blank">Paypal</a>.</p>
+    <p id="closeabt"><a href="#">CLOSE</a></p>
+</div>
+
+<div id="footer">
+    <p class="status">loading...</p>
+    <div class="about">
+        <a id="likelink" class="" href="#">
+            <img id="likelogo" class="" src="like.png">
+        </a>
+    </div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+
+</html>

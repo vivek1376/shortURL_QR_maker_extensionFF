@@ -1,0 +1,138 @@
+html, body {
+    width: 266px;
+    overflow: hidden;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div#wrap {
+    margin: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+div#urlStrBtn {
+    width:100%;
+    height: 36px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    margin-bottom: 10px;
+}
+
+div#urlinfo {
+    padding-top: 4px;
+    font-size: 24px;
+    font-family: 'hackregular', monospace;
+    font-weight: bold;
+    color: #3c3c49;
+
+    /* to clip excess text, in order to prevent displacing 'copy' button,
+       also set width for body */
+    width: 80%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+
+}
+
+div#footer {
+  height: 26px;
+  background-color: #fff9f2;
+  border-top: 1px dotted #f2ece6;
+  overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+div#footer p.status {
+  padding-top: 3px;
+  font-size: 15px;
+  width: 75%;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'hackitalic', monospace;
+  text-transform: uppercase;
+  color: #86817f;
+  font-weight: bold;
+}
+
+div#footer div.about {
+  float: right;
+  overflow: hidden;
+}
+
+div#footer div.about a {
+    display: inline-block;
+    padding-top: 4px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+div#footer div.about img {
+    height: 17px;
+}
+
+input#copybtn {
+  display: block;
+  float: right;
+}
+
+img#qrimg {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    /*background-image: url("bgPixel.png");*/
+    /*background-repeat: repeat;*/
+    background-repeat: repeat;
+}
+
+div#aboutBox {
+    width: 266px;
+    height: 316px;
+    background-color: #fff9f2;
+    padding: 20px;
+    font-family: 'hackregular', monospace;
+    font-size: 14px;
+}
+
+div#aboutBox p {
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+div#aboutBox img#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+div#aboutBox p#closeabt {
+    font-size: 18px;
+    margin-top: 22px;
+}
+
+div#aboutBox a:link {
+    font-weight: bold;
+    font-style: italic;
+    color: #d35973;
+}
+
+div#aboutBox a:hover {
+    color: #f36784;
+}
+
+div#aboutBox p#closeabt a {
+    font-style: normal;
+}
+
+.hidden {
+    display: none;
+}
+
