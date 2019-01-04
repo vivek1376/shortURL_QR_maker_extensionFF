@@ -9,7 +9,6 @@ browser.runtime.onMessage.addListener(function (message) {
         /* clipboard successfully set */
     }, function () {
         /* clipboard write failed */
-        // console.log("error");
     });
 });
 
@@ -17,7 +16,6 @@ browser.runtime.onMessage.addListener(function (message) {
 browser.contextMenus.onClicked.addListener(function(info, tab) {
     switch (info.menuItemId) {
         case "ext_shorturl_is-gd":
-            console.log("right clicked");
             browser.tabs.executeScript({file: "/content_scripts/contentscript.js"})
                 .catch(function () {
                     // nothing

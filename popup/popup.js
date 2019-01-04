@@ -23,8 +23,6 @@ browser.runtime.onMessage.addListener(notify);
 
 function notify(message) {
 
-    console.log("got message" + JSON.stringify(message));
-
     if (message.hasOwnProperty('error')) {
         isErrorFlag = true;
         printError('short url error');
@@ -33,16 +31,12 @@ function notify(message) {
 
     var isgdUrl_str = message.isgdurl;
 
-    console.log("isgdurl: " + isgdUrl_str);
-
     var isgdUrl_str_formatted = isgdUrl_str.substring(8);
 
     document.getElementById("urlinfo").innerText = isgdUrl_str_formatted;
 
     var url_qr = 'https://chart.googleapis.com/chart?cht=qr&chs=250x250&chld=M|0&chl='
         + encodeURIComponent(isgdUrl_str);
-
-    console.log(url_qr);
 
     var image = document.getElementById("qrimg");
     var downloadingImage = new Image();
@@ -53,7 +47,6 @@ function notify(message) {
     };
 
     downloadingImage.onerror = function () {
-        console.log("image error.");
         isErrorFlag = true;
         printError('qr code error');
     };
@@ -62,14 +55,11 @@ function notify(message) {
 
     // copy button handler
     function copy() {
-        console.log("url copied");
         navigator.clipboard.writeText(isgdUrl_str).then(function () {
             /* clipboard successfully set */
-            console.log("success");
         }, function () {
             /* clipboard write failed */
             printError('error copying');
-            console.log("error");
         });
     }
 
@@ -88,7 +78,6 @@ function notify(message) {
     });
 
     copyIcon_obj.addEventListener("mouseout", function () {
-        console.log("mouseout");
 
         if (isCopyClicked === true) {
             isCopyClicked = setTimeout(function () {
@@ -109,7 +98,6 @@ function notify(message) {
 
     copyIcon_obj.addEventListener("click", function () {
         isCopyClicked = true;
-        console.log("clicked");
         document.querySelector('div#footer p.status').innerText = 'copied !';
     });
 }
@@ -118,12 +106,10 @@ function notify(message) {
 var likeIcon_obj = document.querySelector('div#footer div.about a#likelink');
 
 likeIcon_obj.addEventListener("mouseover", function () {
-    console.log("mouseover");
     document.querySelector('div#footer p.status').innerText = 'see about';
 });
 
 likeIcon_obj.addEventListener("mouseout", function () {
-    console.log("mouseout");
     if (isErrorFlag === true) {
         printError(prevErrStr);
     } else {

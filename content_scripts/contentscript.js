@@ -3,16 +3,12 @@
      * If this content script is injected into the same page again,
      * it will do nothing next time. */
     if (typeof window.isContentScriptRunning !== "undefined" && window.isContentScriptRunning === 1) {
-        console.log("returning.");
         return;
     }
 
     window.isContentScriptRunning = 1;
 
     if (typeof window.isgdshortURL !== "undefined") {
-        console.log("found isgd cached url. returning.");
-        console.log(window.isgdshortURL);
-
         browser.runtime.sendMessage({"isgdurl": window.isgdshortURL});
         window.isContentScriptRunning = 0;
 
@@ -22,7 +18,6 @@
     var url_encoded = encodeURIComponent(window.location.href);
 
     var apiUrl = 'https://is.gd/create.php?format=json&url=' + url_encoded;
-    console.log("URL: " + apiUrl);
 
     var xhttp = new XMLHttpRequest();
 
@@ -33,18 +28,13 @@
     }
 
     xhttp.onload = function() {
-        console.log("onload");
         var resp = undefined;
         var isError = false;
 
-        console.log("http response: " + this.status);
-
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-            console.log("status 200");
             try {
                 var resp = JSON.parse(this.responseText);
             } catch (e) {
-                console.log("error catch");
                 isError = true;
             }
 
@@ -52,12 +42,8 @@
                 window.isgdshortURL = resp.shorturl;
                 browser.runtime.sendMessage({'isgdurl': window.isgdshortURL});
             } else {
-                console.log("resp undefined.");
                 browser.runtime.sendMessage({'error': 'error'});
             }
-        } else {
-            console.log("status ELSE");
-            // console.log("in ELSE part.");  //???
         }
     };
 
