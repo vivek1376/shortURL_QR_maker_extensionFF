@@ -19,11 +19,7 @@
         return;
     }
 
-    console.log("inside content script");
-
-    var pageURL = window.location.href;
-
-    var url_encoded = encodeURIComponent(pageURL);
+    var url_encoded = encodeURIComponent(window.location.href);
 
     var apiUrl = 'https://is.gd/create.php?format=json&url=' + url_encoded;
     console.log("URL: " + apiUrl);

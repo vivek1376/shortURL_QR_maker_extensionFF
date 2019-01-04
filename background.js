@@ -14,17 +14,14 @@ browser.runtime.onMessage.addListener(function (message) {
 });
 
 
-var reportExecuteScriptError = function() {
-    // nothing
-};
-
-
 browser.contextMenus.onClicked.addListener(function(info, tab) {
     switch (info.menuItemId) {
         case "ext_shorturl_is-gd":
             console.log("right clicked");
             browser.tabs.executeScript({file: "/content_scripts/contentscript.js"})
-                .catch(reportExecuteScriptError);
+                .catch(function () {
+                    // nothing
+                });
 
             break;
     }

@@ -48,7 +48,7 @@ div#footer {
 }
 
 div#footer p.status {
-  padding-top: 4px;
+  padding-top: 3px;
   font-size: 15px;
   width: 75%;
   float: left;
@@ -68,7 +68,7 @@ div#footer div.about {
 
 div#footer div.about a {
     display: inline-block;
-    padding-top: 5px;
+    padding-top: 4px;
     padding-left: 10px;
     overflow: hidden;
 }
@@ -120,11 +120,16 @@ div#aboutBox p#closeabt {
 
 div#aboutBox a:link {
     font-weight: bold;
+    font-style: italic;
     color: #d35973;
 }
 
 div#aboutBox a:hover {
     color: #f36784;
+}
+
+div#aboutBox p#closeabt a {
+    font-style: normal;
 }
 
 .hidden {

@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Short URL & QR Code maker",
-  "version": "1.0",
+  "version": "0.0.1",
   "description": "Create short URLs as well as generate QR code.",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+  "homepage_url": "https://github.com/vivek1376/shortURL_QR_maker_extensionFF",
   "icons": {
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
