@@ -27,36 +27,42 @@
     var xhttp = new XMLHttpRequest();
 
     if (!xhttp) {
+        browser.runtime.sendMessage({"error": "error"});
         window.isContentScriptRunning = 0;
         return;
     }
 
     xhttp.onload = function() {
+        console.log("onload");
         var resp = undefined;
         var isError = false;
 
         console.log("http response: " + this.status);
 
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+            console.log("status 200");
             try {
                 var resp = JSON.parse(this.responseText);
             } catch (e) {
+                console.log("error catch");
                 isError = true;
             }
 
             if (typeof resp !== 'undefined' && resp.hasOwnProperty('shorturl')) {
                 window.isgdshortURL = resp.shorturl;
-                browser.runtime.sendMessage({"isgdurl": window.isgdshortURL});
+                browser.runtime.sendMessage({'isgdurl': window.isgdshortURL});
             } else {
-                if (resp.hasOwnProperty('errorcode')) {
-                    browser.runtime.sendMessage({"error": resp.errorcode});
-                } else {
-                    browser.runtime.sendMessage({"error": "error"});
-                }
+                console.log("resp undefined.");
+                browser.runtime.sendMessage({'error': 'error'});
             }
         } else {
+            console.log("status ELSE");
             // console.log("in ELSE part.");  //???
         }
+    };
+
+    xhttp.onerror = function() {
+        browser.runtime.sendMessage({"error": "error"});
     };
 
     xhttp.open("GET", apiUrl, true);

@@ -97,20 +97,20 @@ div#aboutBox {
     background-color: #fff9f2;
     padding: 20px;
     font-family: 'hackregular', monospace;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 div#aboutBox p {
     text-align: center;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 div#aboutBox img#logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 div#aboutBox p#closeabt {

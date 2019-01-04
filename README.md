@@ -17,4 +17,4 @@
 <br>
 
 ## Privacy
-- The extension shares only the URL information with *is.gd* and *google charts* service. No other user information is used. As they are third party services, please refer to their respective privacy policies.
+- The extension shares only the URL information with *is.gd* and *google charts* service. As they are third party services, please refer to their respective privacy policies. No other user information is used.
