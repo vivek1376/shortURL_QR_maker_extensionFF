@@ -1,18 +1,8 @@
-/**
- * There was an error executing the script.
- * Display the popup's error message, and hide the normal UI.
- */
-// document.querySelector('div#aboutBox').classList.add('hidden');
-
-
-// custom_var = "custom_val";
-
 var isErrorFlag = false;
 
 function reportExecuteScriptError(error) {
     printError();
 }
-
 
 function printError(errStr) {
     errStr = errStr || 'Error !';
@@ -96,9 +86,9 @@ function notify(message) {
     copyIcon_obj.addEventListener("mouseout", function () {
         console.log("mouseout");
 
-        if (isCopyClicked == true) {
+        if (isCopyClicked === true) {
             isCopyClicked = setTimeout(function () {
-                if (isErrorFlag == true) {
+                if (isErrorFlag === true) {
                     printError();
                 } else {
                     document.querySelector('div#footer p.status').innerText = '';
@@ -131,7 +121,7 @@ likeIcon_obj.addEventListener("mouseover", function () {
 
 likeIcon_obj.addEventListener("mouseout", function () {
     console.log("mouseout");
-    if (isErrorFlag == true) {
+    if (isErrorFlag === true) {
         printError();
         // document.querySelector('div#footer p.status').innerText = oldStStr;
     } else {
@@ -152,7 +142,7 @@ likeIcon_obj.addEventListener("click", function () {
     divlike_obj.classList.add('hidden');
 });
 
-document.querySelector('a#closeabt').addEventListener("click", function () {
+document.querySelector('p#closeabt a').addEventListener("click", function () {
     divmain_obj.classList.remove('hidden');
     divlike_obj.classList.remove('hidden');
     divAbtBox_obj.classList.add('hidden');

@@ -16,7 +16,6 @@ browser.runtime.onMessage.addListener(function (message) {
 
 var reportExecuteScriptError = function() {
     // nothing
-    return;
 };
 
 

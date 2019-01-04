@@ -2,7 +2,7 @@
     /* Check and set a global guard variable.
      * If this content script is injected into the same page again,
      * it will do nothing next time. */
-    if (typeof window.isContentScriptRunning !== "undefined" && window.isContentScriptRunning == 1) {
+    if (typeof window.isContentScriptRunning !== "undefined" && window.isContentScriptRunning === 1) {
         console.log("returning.");
         return;
     }
@@ -42,8 +42,6 @@
         console.log("http response: " + this.status);
 
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-            // console.log("2: " + this.responseText);
-
             try {
                 var resp = JSON.parse(this.responseText);
             } catch (e) {
@@ -61,7 +59,7 @@
                 }
             }
         } else {
-            console.log("in ELSE part.");  //???
+            // console.log("in ELSE part.");  //???
         }
     };
 
