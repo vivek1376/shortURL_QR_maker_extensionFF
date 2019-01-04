@@ -102,7 +102,7 @@ div#aboutBox {
 
 div#aboutBox p {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 
@@ -115,7 +115,7 @@ div#aboutBox img#logo {
 
 div#aboutBox p#closeabt {
     font-size: 18px;
-    margin-top: 30px;
+    margin-top: 22px;
 }
 
 div#aboutBox a:link {

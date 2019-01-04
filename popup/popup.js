@@ -37,7 +37,7 @@ function notify(message) {
 
     document.getElementById("urlinfo").innerText = isgdUrl_str_formatted;
 
-    url_qr = 'https://chart.googleapis.com/chart?cht=qr&chs=250x250&chld=M|0&chl='
+    var url_qr = 'https://chart.googleapis.com/chart?cht=qr&chs=250x250&chld=M|0&chl='
         + encodeURIComponent(isgdUrl_str);
 
     console.log(url_qr);
@@ -115,15 +115,13 @@ var likeIcon_obj = document.querySelector('div#footer div.about a#likelink');
 
 likeIcon_obj.addEventListener("mouseover", function () {
     console.log("mouseover");
-    // oldStStr = document.querySelector('div#footer p.status').innerText;
-    document.querySelector('div#footer p.status').innerText = 'GOTO homepage';
+    document.querySelector('div#footer p.status').innerText = 'see about';
 });
 
 likeIcon_obj.addEventListener("mouseout", function () {
     console.log("mouseout");
     if (isErrorFlag === true) {
         printError();
-        // document.querySelector('div#footer p.status').innerText = oldStStr;
     } else {
         document.querySelector('div#footer p.status').innerText = '';
     }
