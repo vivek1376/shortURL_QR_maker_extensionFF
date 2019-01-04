@@ -39,7 +39,7 @@ function notify(message) {
 
     document.getElementById("urlinfo").innerText = isgdUrl_str_formatted;
 
-    var url_qr = 'https://chart.googleapis.com/chart?chtt=qr&chs=250x250&chld=M|0&chl='
+    var url_qr = 'https://chart.googleapis.com/chart?cht=qr&chs=250x250&chld=M|0&chl='
         + encodeURIComponent(isgdUrl_str);
 
     console.log(url_qr);
