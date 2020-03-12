@@ -1,5 +1,5 @@
 # ![logo](https://raw.githubusercontent.com/vivek1376/shortURL_QR_maker_extensionFF/dev/icons/icon48.png) Short URL & QR Code maker 
-### *A firefox extension that helps you shorten page URL as well as generate QR code.*
+### *A firefox extension that lets you shorten page URL and generate QR code.*
 ## Download
 - [https://addons.mozilla.org/en-US/firefox/addon/short-url-qr-code-maker/](https://addons.mozilla.org/en-US/firefox/addon/short-url-qr-code-maker)
 ## Features
